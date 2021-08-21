@@ -1,0 +1,26 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package tech.paulosalgado.grpc;
+
+message ContactRequest {
+  string name = 1;
+  MailContactRequest contact = 2;
+}
+
+message MailContactRequest {
+  string email = 1;
+}
+
+message ContactResponse {
+  string id = 1;
+  string name = 2;
+  MailContactResponse contact = 3;
+}
+
+message MailContactResponse {
+  string email = 1;
+}
+
+service ContactService {
+  rpc save(ContactRequest) returns (ContactResponse);
+}
