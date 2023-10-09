@@ -1,0 +1,11 @@
+version: 1.0
+
+provider:
+  name: openfaas
+  gateway: ${GATEWAY_URL}
+
+functions:
+  python3-demo:
+    lang: python3-http
+    handler: ./python3-demo
+    image: paulosalgado/openfaas-python3-demo:latest
